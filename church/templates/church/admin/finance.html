@@ -1,0 +1,94 @@
+
+<div class="session-main-content-right" id="session-main-content-right1" style="display: none;">
+    {% include 'church/admin/extendfinance.html' %}
+    <div class="f-content-left" id="debit-box">
+        <div class="title-bar-content">
+            <h1>Debit</h1>
+            <!-- <button type="button" onclick="window.print();" value=" Print ">Imprint</button> -->
+            <button id="getbutton">Print</button>
+        </div>
+        
+        <div class="f-content-left-top">
+            <div class="fom-content-box">
+                <form id="select-category">
+                    {% csrf_token %}
+                    <div class="form-item-group">
+                        <select name="select_option" id="select_option">
+                            <option value='' selected disabled>select_option</option>
+                            {% for key, value in options.items %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" name="option_hidden">
+                        <button type='button' id="btn-select-category">Display</button>
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+    
+        <div class="f-content-left-bottom">
+            <div class="tbl-content-box">
+                <div class="filter-in-tbl">
+                    <input type="search" data-table="order-table" placeholder="filter in table.." class="filter-in-table">
+                    <button onclick="fopenScreen();" style="margin-left: 400px; padding: 8px; font-size: 18px; width: 70px">+Add</button>
+                </div>
+                <div class="table-content" id="table-data">
+                    <!-- Data logining from Json -->
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="f-content-right">
+        <div class="f-content-activities">
+            <h1>Activities</h1>
+            <div class="activities-content">
+                <div class="display-acti-box" >
+                    <label>Givings</label>:
+                    <div id="givings" style="box-sizing: border-box; width: 100%; display: block;">
+                        <h2 id="f-givings">RAS</h2>
+                        
+                    </div>
+                   
+                </div>
+                <div class="display-acti-box" >
+                    <label>Tithe</label>:
+                    <div id="tithes" style="box-sizing: border-box; width: 100%; display: block;">
+                        <h2 id="f-tithes">RAS</h2>
+                       
+                    </div>
+          
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="fom-content-box">
+                <form id="search-by-date">
+                    {% csrf_token %}
+                    <div class="form-item-group-search" id="form-item-group-search">
+                        <span>From</span>
+                        <input type="date" name='search_by_date1' />
+                        <span>to</span>
+                        <input type="date" name='search_by_date2' />
+                        <input type="hidden" name="search_date_hidden" id="options"/>
+                        <button type="button" id="btn-search-item-group-search">Search</button>
+                    </div>
+                </form>
+            </div> -->

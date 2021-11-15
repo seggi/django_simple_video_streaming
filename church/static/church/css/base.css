@@ -1,0 +1,123 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #fff;
+	font-size: 14px;
+	font-size: 14px;
+	font-family: "Roboto","Lucida Grande","DejaVu Sans",
+			"Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	color:  #333;
+	
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	width: inherit;
+}
+
+tfoot, thead{
+	text-align: left;
+}
+
+thead {
+	/* background: #ACACAC;
+	color: #000000; */
+	padding: 8px 10px;
+	margin-bottom: 15px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	background: #f8f8f8;
+	color: #666;
+}
+
+th, td {
+	border-left: 1px solid #fff;
+	padding: 5px;
+	padding: .5em .5em;
+	/* padding: 1em 1em;  */
+}
+
+tbody tr:hover {
+	background: rgb(214, 214, 214);
+}
+
+
+th:first-child, td:first-child {
+	border-left: none;
+}
+
+tr {
+	margin-bottom: 1em;
+}
+
+th{
+	margin-bottom: 1em;
+	color: #666;
+	font-size: 11px;
+	/* background: #d9d9d9; */
+}
+
+ td {
+    font-weight: 300;
+	color: rgb(46, 46, 46);
+	font-size: 15px;
+}
+
+ol, ul, dl {
+	margin: .2em 0 .8em 0;
+}
+
+li, dt, dd {
+	font-size: 13px;
+	line-height: 20px;
+}
+
+
+
+/* exception size */
+
+@media (max-width: 30em) {
+	table, thead, tbody, tr, th, td {
+		display: block;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		margin-bottom: 1em;
+	}
+}
+
+
+
+/* Table next page slider */
+
+.nav {
+	margin-top: 0px;
+	margin-bottom: 50px;
+}
+.nav a{
+	color: #333;
+	padding: 8px;
+	margin: 8px 5px;
+	border: 1px solid #0b98cc;
+	text-decoration: none;
+}
+
+.nav a.active{
+	background-color: #0b98cc;
+	color: white;
+}
+.nav a:hover:not(.active){
+	background-color: #add;
+	border: 1px solid #add;
+}

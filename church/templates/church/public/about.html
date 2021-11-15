@@ -1,0 +1,57 @@
+{% extends "church/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="body-content">
+    <div class="about-section">
+    <h1>About Us</h1>
+    <p>We still in development phase.</p>
+    <p>We will be pround to see you feeback and give us your point of view.</p>
+    </div>
+
+    <h2 style="text-align:center">People to Contact</h2>
+        <div class="row">
+        <div class="column">
+            <div class="card">
+            <img src="{% static 'church/css/images/logo.jpg' %}" alt="Jane" style="width:100%">
+            <div class="container">
+                <h2>Josh</h2>
+                <p class="title">CEO & Founder</p>
+                <p>The head of the church & and chief of the team</p>
+
+                <p>josh@test.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+            </div>
+        </div>
+
+    <!-- <div class="column">
+        <div class="card">
+        <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+        <div class="container">
+            <h2>....</h2>
+            <p class="title">Art Director</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>mike@example.com</p>
+            <p><button class="button">Contact</button></p>
+        </div>
+        </div>
+    </div>
+    
+    <div class="column">
+        <div class="card">
+        <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+        <div class="container">
+            <h2>John Doe</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>john@example.com</p>
+            <p><button class="button">Contact</button></p>
+        </div>
+        </div>
+    </div>
+    </div> -->
+
+</div>
+
+{% endblock %}

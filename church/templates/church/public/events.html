@@ -1,0 +1,125 @@
+{% extends "church/base.html" %}
+{% load static %}
+{% block content %}
+<div class="body-content">
+    <div class="header-content">
+        <div class="top-nav-bar">
+
+        </div>
+        <div class="bottom-nav-bar">
+            <div class="nav-left-item">
+                <img src="{% static 'church/css/images/logo.jpg' %}">
+            </div>
+            <div class="nav-right-item">
+                <a href="{% url 'public:homepage' %}">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="main-content-body">
+        <div class="event-content-body">
+            <div class="top-event-nav-bar">
+                
+            </div>
+        </div>
+        <div class="event-middle-content-body">
+            <div class="header-middle-content-body">
+                <div class="title-header">
+                    <h1>Check coming events</h1>
+                    <p>You will discover that in christianity there many events organized
+                        for youth </p>
+                </div>
+            </div>
+
+            <div class="sub-event-content-body">
+                <div class="bind-all">
+                    <div class="left-event">
+                        {% if arcticles|length %}
+                            {% for content_article in arcticles %}
+                                <div class="body-posted">
+                                    <h1>{{ content_article.title }}</h1>
+                                         <img class="img-reponsive" src="{{ MEDIA_URL }}{{ content_article.img }}">
+                                    <p>{{ content_article.body }}</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="body-posted"><h1>{{ error }}</h1></div>
+                        {% endif %}
+                    </div>
+
+                    <div class="right-event">
+                        <h1>Church program</h1>
+                        <div class="box-news-text">
+                            {% if churchprogram|length %}
+                                {% for key in churchprogram %}
+                                    <table>
+                                        <tr><td id="program-title">{{ key.day }}</td></tr>
+                                        <tr><td>Starting</td><td>{{ key.starthour }}</td></tr>
+                                        <tr><td>Ending</td><td>{{ key.endhour }}</td></tr>
+                                    </table>
+                                {% endfor %}
+                            {% else %}
+                                <p>Nothing posted yet</p>
+                            {% endif %}
+                        </div>
+                
+                        <img class="img-reponsive" src="{% static 'church/css/images/logo.jpg' %}">
+                        <p>{{ church_slogan }}</p>
+                        <br>
+                        <a href="#">f comment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-content-event">
+                <div class="inner-bottom-content-event">
+                    <!-- <h1>Get Rendez-vous with the Pastor</h1>
+                    <form>
+                        <div class="log-item">
+                            <label>Names</label>
+                            <input type="text" name="names" placeholder="Name & lastname" id="save-title">
+                        </div>
+                        <div class="log-item">
+                            <label>Email</label>
+                            <input type="text" name="emal" placeholder="email@test.com" id="save-title">
+                        </div>
+
+                        <div class="log-item">
+                            <input type="submit" name="emal" placeholder="email@test.com" id="save-title">
+                        </div>
+                    
+                    </form> -->
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</div>
+<div class="nk-footer">
+    <div class="inner-foot-content">
+        <ul class="nk-footer-list">
+            <li class="nk-footer-list-item">
+                <a class="nk-footer-link" href="#">About</a>
+            </li>
+            <li class="nk-footer-list-item">
+                <a class="nk-footer-link" href="#">Legal</a>
+            </li>
+            <li class="nk-footer-list-item">
+                Copyright © 2020 nankim. 
+            </li>
+            <li class="nk-footer-list-item">
+                All Rights Reserved. 
+            </li>
+            <li class="nk-footer-list-item">
+                Protected by reCAPTCHA –Privacy– Terms 
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+<!-- font-family: "Chronicle Display A","Chronicle Display B",serif;
+font-weight: 600; -->

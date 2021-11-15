@@ -1,0 +1,153 @@
+{% extends "church/base.html" %}
+{% load static %}
+{% block content %}
+<div class="body-content bdback-primary">
+    <div class="header-content hd-color-primary">
+        <div class="top-nav-bar">
+            <div class="media-logo">
+                <!-- <img src="{% static 'church/css/images/facebook.png' %}">
+                <img src="{% static 'church/css/images/twitter.png' %}">
+                <img src="{% static 'church/css/images/whatsapp.png' %}"> -->
+            </div>
+        </div>
+        <div class="bottom-nav-bar">
+            <div class="nav-left-item">
+                <img src="{% static 'church/css/images/logo.jpg' %}">
+            </div>
+            <div class="nav-right-item">
+                <a href="#">Home</a>
+                <a href="{% url 'public:aboutus' %}">About us</a>
+                <a href="{% url 'public:contactus' %}">Contact us</a>
+            </div>
+           
+        </div>
+    </div>
+        <!-- body content Home -->
+
+    <div class="main-content-body">
+        <div class="top-main-content-body">
+            <div class="left-top-main-content-body">
+                <h1>To grow in Faith & Share our Faith in God with
+                    the world around us
+                </h1>
+                <h3>
+                    Le salut par Jesus Christ
+                </h3>
+            </div>
+
+            <div class="right-top-main-content-body" >
+                <div class="polaroid rotate_right">
+                    <div class="image-sliderfade fade"> 
+                        <img id="changeimg" src="{% static 'church/css/images/1.jpg' %}"  width="284" height="213">
+                        <p class="caption">We were blesswd this sunday has God was with us.</p>
+                    </div>
+
+                    <div class="image-sliderfade fade"> 
+                        <img id="changeimg" src="{% static 'church/css/images/praying1.jpg' %}"  width="284" height="213">
+                        <p class="caption">We were blesswd this sunday has God was with us.</p>
+                    </div>
+
+                    <div class="image-sliderfade fade"> 
+                        <img id="changeimg" src="{% static 'church/css/images/christian.jpg' %}"  width="284" height="213">
+                        <p class="caption">We were blesswd this sunday has God was with us.</p>
+                    </div>
+
+                    <div class="image-sliderfade fade"> 
+                        <img id="changeimg" src="{% static 'church/css/images/view.jpg' %}"  width="284" height="213">
+                        <p class="caption">We were blesswd this sunday has God was with us.</p>
+                    </div>
+
+                    <div style="text-align:center"> 
+                        <span class="dot"></span>  
+                        <span class="dot"></span>  
+                        <span class="dot"></span>  
+                        <span class="dot"></span>  
+                    </div> 
+                </div>
+
+            </div>
+
+        </div>
+        <div class="bottom-main-content-body">
+            <div  class="middle-nav-bar">
+                <div class="btn-middle-nav">
+                    <a href="{% url 'public:preaching' %}" class="button">Preachings</a>
+                    <a href="{% url 'public:news' %}" class="button">News</a>
+                    <a href="{% url 'public:events' %}" class="button">Events</a>
+                </div>
+            </div>
+
+            <div class="sub-bottom-main-content-body">
+                <div class="inner-sub-bottom-main-content-body">
+                    <div class="box-news">
+                        <h1>Church program</h1>
+                        <div class="box-news-text">
+                            {% if churchprogram|length %}
+                                {% for key in churchprogram %}
+                                    <table>
+                                        <tr><td id="program-title">{{ key.day }}</td></tr>
+                                        <tr><td>Starting</td><td>{{ key.starthour }}</td></tr>
+                                        <tr><td>Ending</td><td>{{ key.endhour }}</td></tr>
+                                    </table>
+                                {% endfor %}
+                            {% else %}
+                                <p>Nothing posted yet</p>
+                            {% endif %}  
+                        </div>
+                        <!-- <a href="#">More</a> -->
+                    </div>
+                    <div class="box-news">
+                        <h1>Activities</h1>
+                        <div class="box-news-text">
+                            {% if commnuns|length %}
+                                {% for commun in commnuns %}
+                                    <ul class="a">
+                                        <li>
+                                            <p>{{ commun.title }}</p>
+                                            <p>{{ commun.date }}</p>
+                                            <p>{{ commun.body }}</p>
+                                        </li>
+                                    </ul>
+                                {% endfor %}
+                            {% else %}
+                                <h2>{{ error }}</h2>
+                            {% endif %}
+                        </div>
+                        <!-- <a href="#">More</a> -->
+                    </div>
+                    <!-- <div class="box-news"></div> -->
+                </div>
+
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="nk-footer">
+    <div class="inner-foot-content">
+        <ul class="nk-footer-list">
+            <li class="nk-footer-list-item">
+                <a class="nk-footer-link" href="#">About</a>
+            </li>
+            <li class="nk-footer-list-item">
+                <a class="nk-footer-link" href="#">Legal</a>
+            </li>
+            <li class="nk-footer-list-item">
+                Copyright © 2020 nankim. 
+            </li>
+            <li class="nk-footer-list-item">
+                All Rights Reserved. 
+            </li>
+            <li class="nk-footer-list-item">
+                Protected by reCAPTCHA –Privacy– Terms 
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+<!-- {% block footer %}
+    <div id="foot-content">
+        
+    </div>
+{% endblock footer %} -->

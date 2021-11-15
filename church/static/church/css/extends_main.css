@@ -1,0 +1,701 @@
+.session-main-content-right {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    padding: 10px;
+
+}
+
+.session-main-content-right::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.f-content-left {
+    float: left;
+    width: 70%;
+    color: #666;
+    /* background: #f8f8f8; */
+    /* background: yellow; */
+}
+
+.f-content-left h1 {
+    padding: 2px;
+    margin: 8px 10px 10px;
+    font-weight: 300;
+    font-size:  20px;
+    color: #666;
+}
+
+.f-content-left-top {
+    height: 100px;
+    margin: 5px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.rendez-vous-content {
+    width:  100%;
+    display: block;
+}
+
+.rendez-vous-content h1  {
+    text-align: center;
+    color: dodgerblue;
+    font-weight: 600;
+
+}
+.left-render-vous-content {
+    width: 50%;
+}
+
+.left-render-vous-content a {
+    text-align: center;
+    margin-left: 40px;
+    color: red;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.rendez-vous-content h2 {
+    font-size:  24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.fom-content-box {
+    margin: 8px;
+   
+}
+
+.form-item-group {
+    display: inline-flex;
+    background-color: dodgerblue;
+    padding: 2px;
+    height: 50px;
+}
+.form-item-group select {
+    font-size: 18px;
+    border: 1px solid dodgerblue;
+    padding: 8px;
+    width: 200px;
+    height: 43px;
+    margin-top: 4px;
+}
+
+.form-item-group button {
+    border: 1px solid dodgerblue;
+    font-size: 18px;
+    padding: 5px;
+    height: 43px;
+    margin-top: 4px;
+    color: #333;
+}
+
+.form-item-group button:hover {
+    background: #fff;
+    border: 1px solid white;
+}
+
+.form-item-group-search {
+    display: inline-flex;
+    background-color: dodgerblue;
+    padding: 2px;
+}
+
+.form-item-group-search  input {
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid dodgerblue;
+}
+
+.form-item-group-search button {
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid dodgerblue;
+    width: 30px;
+}
+
+/* .form-item-group-search button:hover {
+    background: #fff;
+    border: 1px solid white;
+    
+} */
+
+.form-item-group-search span {
+    padding: 5px;
+    color: white;
+    align-self: center;
+    font-size: 15px;
+}
+
+
+
+.f-content-left-bottom {
+    margin: 5px;  
+}
+
+.tbl-content-box {
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+
+.filter-in-tbl {
+    width: 100%;
+    padding: 5px;
+    padding-top: 0px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(214, 214, 214);
+
+}
+
+.filter-in-tbl input {
+    padding: 6px;
+    border: 1px solid rgb(197, 197, 197);
+    width: 20%;
+}
+
+.filter-in-tbl button {
+    padding: 2px;
+    width: 50px;
+    margin-right: 20px;
+    background: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.filter-in-tbl button:hover {
+    border:1px solid white;
+    border-radius: 4px;
+}
+
+.filter-in-tbl b {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.table-content {
+    margin-top: 5px;
+}
+
+.table-content th{
+    width: 150px;
+}
+
+.f-content-right {
+    float: right;
+    width: 30%;
+    color: #666;
+}
+
+.f-content-activities {
+    width: 80%;
+    padding: 8px;
+    margin: 5px;
+    margin-left: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.f-content-activities h1 {
+    margin: 10px 5px 20px;
+    font-weight: 600;
+    font-size:  20px;
+    color: black;
+    text-align: center;
+}
+
+.activities-content {
+    padding: 5px;
+}
+
+.activities-content h2 {
+    margin: 10px 5px 20px;
+    font-weight: 300;
+    font-size:  20px;
+    color: black;
+    text-align: center;
+}
+
+.display-acti-box {
+    display: flex;
+}
+
+.display-acti-box  label {
+    width: 40%;
+}
+
+.display-acti-box h2 {
+    width: 60%;
+    margin-top: -5px;
+    background-color: rgb(127, 136, 136);
+    color: white;
+    font-size: 25px;
+}
+
+/* f-popup-screen */
+
+.f-popup-content {
+    display: none;
+    text-align: center; 
+    border-top: 1px solid #333;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.f-form-popup {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+    height: 40%;
+    padding: 30px;
+    border-radius: 0.4rem;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    overflow: auto;
+}
+
+.f-form-popup .log-item {
+    box-sizing: border-box;
+    width: 90%;
+    margin-top: -10px;
+    margin: 5px 20px;
+}
+
+.close {
+    color: #333;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+
+.close {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+
+}
+
+.close:hover {
+    color:  #e8e8e8;
+    background-color: darkgray;
+}
+
+.form-title {
+    width:  100%;
+    padding:  0px;
+    box-sizing: border-box;
+    margin-top: -10px;
+}
+
+.form-title h1 {
+    margin: 10px 5px 20px;
+    font-weight: 300;
+    font-size:  20px;
+    color: black;
+    text-align: start;
+    margin-left: 30px;
+}
+
+/* title bar && printer */
+.title-bar-content {
+    display: flex;
+    width:  100%;
+    
+}
+
+.title-bar-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.title-bar-content h1 {
+    float: left;
+    width:  90%;
+    
+}
+
+.title-bar-content button {
+    float: right;
+    width:  10%;
+    margin-right:  30px;
+    border: 1px solid rgb(202, 27, 27);
+    border-radius: 4px;
+    background-color: rgb(228, 109, 109);
+    color:  white;
+    font-weight: 600;
+    font-size: 18px;
+    height: 40px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.title-bar-content button:hover {
+    background-color: rgb(160, 64, 64);
+}
+
+.btn-delete {
+    background-color: rgb(221, 103, 103);
+    border: 1px solid rgb(255, 17, 0);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-delete:hover {
+    cursor: pointer;
+}
+
+.btn-delete-blog {
+    background-color: rgb(221, 103, 103);
+    border: 1px solid rgb(255, 17, 0);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-delete-blog:hover {
+    cursor: pointer;
+}
+
+.btn-delete-blog-e {
+    background-color: rgb(221, 103, 103);
+    border: 1px solid rgb(255, 17, 0);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-delete-blog-e:hover {
+    cursor: pointer;
+}
+
+.btn-delete-visit {
+     background-color: rgb(221, 103, 103);
+    border: 1px solid rgb(255, 17, 0);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-delete-visit:hover {
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: rgb(241, 174, 28);
+    border: 1px solid rgb(196, 151, 3);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-edit:hover {
+    cursor: pointer;
+}
+
+/* print page div */
+
+.inner-print-table-content {
+    padding: 8px;
+    box-sizing: border-box;
+    display: none;
+
+}
+
+.page-header {
+    height: 50px;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.page-header img {
+    width: 250px;
+    height: 200px;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.page-title h1{
+    color: black;
+    font-weight: 400;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-top: -150px;
+}
+
+.page-body {
+    width: 90%;
+    padding: 8px;
+    margin-top: -100px;
+    box-sizing: border-box;
+    
+}
+
+.page-body  table{
+    margin-left: 50px;
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+
+    border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	width: inherit;
+}
+
+.page-body table th td {
+	border-left: 1px solid #fff;
+	padding: 5px;
+	padding: .5em .5em;
+	/* padding: 1em 1em;  */
+}
+
+/* .table-fomat {
+    background:  red;
+} */
+
+.sumary-content {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.sumary-content h1 {
+    color: black;
+    font-weight: 400;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.sumary-content .display-acti-box {
+    margin-top: 30px;
+}
+
+
+/* @media print {
+    body * {
+        visibility: visible;
+    }
+
+    .print-table-content, .print-table-content * {
+        visibility: visible;
+        display: table;
+    }
+
+    .print-table-content {
+        background-color: white;
+        position: fixed;
+        left: 0;
+        top: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+        background:red;
+       
+    }
+   
+} */
+
+/* appointment  */
+
+.right-content-filter {
+    float: right;
+    width: 40%;
+    box-sizing: border-box;
+    display: inline-flex;
+    
+}
+
+.right-content-filter button{
+    padding: 8px;
+    width: 70px;
+    float: left;
+    margin-left: 0px;
+    background: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.right-content-filter button:hover {
+    cursor: pointer;
+}
+
+.btn-delete-ap {
+    background-color: rgb(221, 103, 103);
+    border: 1px solid rgb(255, 17, 0);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-delete-ap:hover {
+    cursor: pointer;
+}
+
+.btn-edit-ap {
+    background-color: rgb(241, 174, 28);
+    border: 1px solid rgb(196, 151, 3);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-edit-ap:hover {
+    cursor: pointer;
+}
+
+.btn-see-ap {
+    background-color: dodgerblue;
+    border: 1px solid rgb(9, 113, 173);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-see-ap:hover {
+    cursor: pointer;
+}
+
+
+.btn-watch {
+    background-color: dodgerblue;
+    border: 1px solid rgb(9, 113, 173);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-watch:hover {
+    cursor: pointer;
+}
+
+.btn-file {
+    background-color: rgb(221, 103, 103);
+    border: 1px solid rgb(255, 17, 0);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.btn-file {
+    cursor: pointer;
+}
+
+.display-more {
+    display: block;
+}
+
+.display-more h4 {
+    width: 100%;
+    margin-top: -5px;
+}
+
+.display-more p {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.f-content-activities span {
+    float: right;
+    margin-top: -50px;
+    background: #333;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.f-content-activities span:hover {
+    cursor: pointer;
+}
+
+.log-item #radio {
+    width: 100%;
+    height: 60px;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.log-item #label {
+    width: 100%;
+    font-weight: 600;
+}
+
+/* Video content */
+
+.v-content-test {
+    margin: 5px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.video-content {
+    box-sizing: border-box;
+    width: 400px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #333;
+    text-align: center;
+
+    /* margin-top: -55px; width:300px; box-sizing: border-box; */
+}
+
+.video-content video {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ================================================================ */
+/* ================================================================== */
+
+#data tr {
+  display: none;
+}

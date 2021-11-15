@@ -1,0 +1,259 @@
+<form id="hidden_form_show_checkout" style="display: none;">
+    {% csrf_token %}
+    <input type="hidden" name="show_checkout">
+</form>
+
+<div class="f-popup-content" id="till-popup-edit">
+    <form id="fill-data-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 250px;">
+            <span class="close" onclick="fillCloseModal();">×</span>
+            <div class="form-title">
+                <h1>Credit...</h1>
+            </div>
+
+            <div class="log-item">
+                <label>Designation</label>
+                <input type="text" name="designation" placeholder="Edit designation" 
+                        style="box-sizing:border-box;" id="edit-designation">
+            </div>
+
+            <div class="log-item">
+                <label>Amount</label>
+                <input type="text" name="amount" placeholder="Edit amount" 
+                        style="box-sizing:border-box;" id="edit-amount">
+            </div>
+
+            <div class="log-item">
+                <input type="hidden" name="retrieve_money" id="update_in_table">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-fill-amount-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<div class="session-main-content-right" id="session-main-content-right4" style="display:none">
+    <div class="f-content-left">
+        <div class="title-bar-content">
+            <h1>Checkout...</h1>
+        </div>
+
+        <div class="content-balance">
+            <div class="content-balance-display">
+               <h1>All</h1>
+                {% if checkoutall|length %}
+                    {% for data in checkoutall %}
+                        <div class="inner-content-balance">
+                            <h2>Debit</h2><h2>${{ data.debit }}</h2>
+                        </div>
+                        <div class="inner-content-balance">
+                            <h2>Credit</h2><h2>${{ data.credit }}</h2>
+                        </div>
+                        <div class="inner-content-balance">
+                            <h2>Balance</h2><h2>${{ data.balance  }}</h2>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+             <div class="content-balance-display">
+                <h1>Result</h1>
+
+                <h2 id="head-balance"></h2>
+            </div>
+            <!-- <div class="show-final-balance">
+                <h1>All</h1>
+                {% if checkoutall|length %}
+                    {% for data in checkoutall %}
+                        <h2>Debit</h2><h2>${{ data.debit }}</h2>
+                        <h2>Credit</h2><h2>${{ data.credit }}</h2>
+                        <h2>Balance</h2><h2>${{ data.balance  }}</h2>
+                    {% endfor %}
+                {% endif %}
+            <div>
+
+            <div class="show-final-balance">
+                <h1 id="title-head-balance"></h1>
+                <h2 id="head-balance"></h2>
+            </div> -->
+        </div>
+
+        <div class="f-content-left-bottom">
+            <div class="tbl-content-box">
+                <div class="filter-in-tbl">
+
+                    <input type="search" data-table="order-table" placeholder="filter in table.." 
+                                class="filter-in-table" style="width: 20%;">
+
+                    <div class="right-content-filter" style="width: 70%; float: none;">
+                        <div class="fom-content-box" style="display: flex;box-sizing: border-box;">
+                            <form id="search-by-date-checkout"  style="width: 60%;">
+                                {% csrf_token %}
+                                <div class="form-item-group-search" id="form-item-group-search" style="width: auto;">
+                                    <span>From</span>
+                                    <input type="date" name='search_by_date1' />
+                                    <span>to</span>
+                                    <input type="date" name='search_by_date2' />
+                                    <input type="hidden" name="search_date_hidden_till" id="options"/>
+                                    <button style="margin-left: 0px; width:80px"type="button" id="btn-search-item-checkout">Search</button>
+                                </div>
+                               
+                            </form>
+                            <div style="display: inline-flex; width: auto; background: white;">
+                                
+                                <button style="margin-left: 10px; width: 50px;"type="button" id="btn_show_hidden_form_checkout">Show</button>
+                                <button  style="margin-left: 0px; width: 50px;" onclick="fillOpenScreen();"><b>-</b></button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            
+
+                <div class="table-content" id="table-data-till">
+                    <!-- Data logining from Json -->
+                    
+                </div>
+                <div id="search_sum" style="display: flex;">
+                    
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="f-content-right">
+        <div class="f-content-activities">
+            <h1>Activities</h1>
+            <div class="activities-content">
+                <div class="display-acti-box" >
+                    <label style="box-sizing: border-box; width: 60%;">Content saved</label>:
+                    <div id="givings" style="box-sizing: border-box; width: 40%; display: block;">
+                        {% if till|length %}
+                            {% for data in till %}
+                                <h2>{{ data.till }}</h2>
+                            {% endfor %}
+                        {% else %}
+                            <h2>RAS</h2>
+                        {% endif %}
+                    </div>
+                   
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <table class="order-table table" style="width: 100%" id="main_classes_t1">
+            <thead>
+                <tr>
+                    <th>Designation</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody >
+
+            <tr>
+                <td>Name</td>
+                <td>lastName</td>
+
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>lastName</td>
+
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>lastName</td>
+
+            </tr>
+
+            <tr>
+                <td>Name</td>
+                <td>lastName</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+ -->
+
+
+
+
+<!-- <div class="summary-item">
+                <div class="title-content">
+                    <h1>Today</h1>
+                </div>
+                
+
+                <table>
+                    {% if checkout|length %}
+                        {% for data in checkout %}
+                            <tr><td id="report-title">Debit</td><td>${{ data.debit }}</td></tr>
+                            <tr><td id="report-title">Credit</td><td>${{ data.credit }}</td></tr>
+                            <tr><td id="report-title">Balance</td><td>${{ data.balance  }}</td></tr>
+                        {% endfor %}
+                    {% endif %}
+                   
+                </table>
+            </div> -->
+
+            <!-- <div class="summary-item">
+                <div class="title-content">
+                    <h1>All</h1>
+                </div>
+                <table>
+                    {% if checkoutall|length %}
+                        {% for data in checkoutall %}
+                            <tr><td id="report-title">Debit</td><td>${{ data.debit }}</td></tr>
+                            <tr><td id="report-title">Credit</td><td>${{ data.credit }}</td></tr>
+                            <tr><td id="report-title">Balance</td><td>${{ data.balance  }}</td></tr>
+                        {% endfor %}
+                    {% endif %}
+                </table>
+            </div> -->
+
+            <!-- <div class="summary-item">
+                 <div class="title-content">
+                    <h1>Search result</h1>
+                </div>
+                <h2 id="head-balance"></h2>
+            </div> -->
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="inner-summary-item">
+            <div class="show-final-balance">
+                <h1>All</h1>
+                {% if checkoutall|length %}
+                    {% for data in checkoutall %}
+                        <h2>Debit</h2><h2>${{ data.debit }}</h2>
+                        <h2>Credit</h2><h2>${{ data.credit }}</h2>
+                        <h2>Balance</h2><h2>${{ data.balance  }}</h2>
+                    {% endfor %}
+                {% endif %}
+            <div>
+
+            <div class="show-final-balance">
+                <h1 id="title-head-balance"></h1>
+                <h2 id="head-balance"></h2>
+            </div>
+        </div> -->

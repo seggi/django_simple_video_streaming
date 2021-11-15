@@ -1,0 +1,155 @@
+
+{% load static %}
+<!-- Print page  -->
+<div class="print-table-content" id="print-table-content">
+    <div class="inner-print-table-content">
+         <div class="page-header" >
+             <img src="{% static 'church/css/images/logo.jpg' %}" style="width: 200px" >
+         </div>
+
+         <div class="page-title">
+            <h1>Details report</h1>
+         </div>
+
+         <div class="page-body" id="page-body"></div>
+         <div class="printtable" id="printtable">
+            
+         </div>
+
+         <div class="sumary-content">
+            <h1>Both balance</h1>
+            <div class="display-acti-box" >
+                <label>Givings</label>:
+                <div id="givings" style="box-sizing: border-box; width: 100%; 
+                            display: block; text-align: left; margin-left: 30px;">
+                    <h2 style="font-size: 18px; font-weight: 500;">RAS</h2>
+                    <h2 style="font-size: 18px; font-weight: 500;">Fc</h2>
+                </div>
+               
+            </div>
+            <div class="display-acti-box" >
+                <label>Tithe</label>:
+                <div id="tithes" style="box-sizing: border-box; width: 100%; 
+                            display: block; text-align: left; margin-left: 30px;">
+                    <h2 style="font-size: 18px; font-weight: 500;">RAS</h2>
+                    <h2 style="font-size: 18px; font-weight: 500;">Fc</h2>
+                </div>
+      
+            </div>
+         </div>
+
+    </div>
+</div>
+
+<form id="getdata_form_hidden" style="visibility: hidden;">
+    {% csrf_token %}
+    <input type="hidden" name="get_data">
+    <input type="hidden" name="edit_money" id="edit_money">
+    <input type="hidden" name="table_edit_data" id="edit_in_table">
+</form>
+
+
+
+<div class="f-popup-content" id="f-popup-edit">
+    <form id="edit-data-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 250px;">
+            <span class="close" onclick="fcloseModalEdit();">×</span>
+            <div class="form-title">
+                <h1>Edit content...</h1>
+            </div>
+
+            <div class="log-item">
+                <label>Designation</label>
+                <input type="text" name="designation" placeholder="Edit designation" 
+                        style="box-sizing:border-box;" id="edit-designation">
+            </div>
+
+            <div class="log-item">
+                <label>Amount</label>
+                <input type="text" name="amount" placeholder="Edit amount" 
+                        style="box-sizing:border-box;" id="edit-amount">
+            </div>
+
+            <div class="log-item">
+                <input type="hidden" name="update_amount" id="updte_money">
+                <input type="hidden" name="table_update_data" id="update_in_table">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-edit-amount-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="f-popup-content" id="f-popup-delete">
+    <form id="delete-data-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="fcloseModalDel();">×</span>
+            <div class="form-title">
+                <h1>Delete Amount...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you want to delete this amount?</label>
+                <input type="hidden" name="delete_money" id="delete_money">
+                <input type="hidden" name="table_delete_name" id="delete_in_table">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-amount-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="f-popup-content" id="f-popup-content">
+    <div class="">
+        <form id="record-amount-form">
+            {% csrf_token %}
+           
+            <div class='f-form-popup'  style="height: 400px">
+                <span class="close" onclick="fcloseModal();">×</span>
+                <div class="form-title">
+                    <h1>Enter Givings & Tith...</h1>
+                </div>
+                
+                <div class="log-item">
+                    <label>Choose an option</label>
+                    <select name="option_chosed">
+                        <option value='' selected disabled>select_option</option>
+                        {% for key, value in options.items %}
+                            <option value="{{ key }}">{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="log-item">
+                    <label>Designation</label>
+                    <input type="text" name="designation" placeholder="Enter name or designation" 
+                            style="box-sizing:border-box;">
+                </div>
+
+                <div class="log-item">
+                    <label>Amount</label>
+                    <input type="hidden" name="save_money">
+                    <input type="number" name="amount" placeholder="Enter amount">
+                </div>
+
+                <div class="log-item">
+                    <button type="button" id="btn-record-amount-form">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- ================================================================================== -->
+
+

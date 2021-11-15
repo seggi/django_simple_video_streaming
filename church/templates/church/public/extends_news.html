@@ -1,0 +1,161 @@
+{% extends "church/base.html" %}
+{% load static %}
+{% block content %}
+<div class="body-content">
+    <div class="header-content">
+        <div class="top-nav-bar">
+
+        </div>
+        <div class="bottom-nav-bar">
+            <div class="nav-left-item">
+                <img src="{% static 'church/css/images/logo.jpg' %}">
+            </div>
+            <div class="nav-right-item">
+                <a href="{% url 'public:homepage' %}">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-body">
+        <div class="event-content-body">
+            <div class="top-event-nav-bar">
+                
+            </div>
+        </div>
+        <div class="event-middle-content-body">
+            <div class="header-middle-content-body">
+                <div class="title-header">
+                    <h1 style="color: green">You Make The Difference</h1>
+                    <p>The and topic covered all here</p>
+                </div>
+            </div>
+
+            <div class="sub-event-content-body">
+                <div class="bind-all" style="width: 80%;">
+                    <div class="left-event">
+                        {% if arcticles|length %}
+                            {% for content_article in  arcticles %}
+                                <div class="body-posted-news">
+                                    <div class="body-posted-news-left" style="text-align: center;">
+                                        <h1 style='
+                                            font-size: 3.375rem;
+                                            font-weight: 400;
+                                            line-height: 1;
+                                            font-family: "Chronicle Display A","Chronicle Display B",serif;
+                                        '>{{ content_article.title }}</h1>
+                                    </div>
+                                    
+                                    <div class="body-posted-news-right" style="display: block;">
+                                        <a style="text-align: center; ">
+                                            <img class="img-reponsive" src="{{ MEDIA_URL }}{{ content_article.img }}" 
+                                                    style="width: 600px; margin: 10px auto;">
+                                        </a>
+                                        <div class="text-body" style="width: 100%">
+                                            <!-- <h2 style=''>{{ content_article.subtitle }}</h2> -->
+                                            <p>{{ content_article.body }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="body-posted-news-left"><h1>{{ error }}</h1></div>
+                        {% endif %}
+
+                    </div>
+
+                    <div class="right-event" style="margin-left: 80px; display:none;">
+                        <div class="top-right-event">
+                            <h1>Church program</h1>
+                            <div class="box-news-text" >
+                                {% if churchprogram|length %}
+                                    {% for key in churchprogram %}
+                                        <table>
+                                            <tr><td id="program-title">{{ key.day }}</td></tr>
+                                            <tr><td>Starting</td><td>{{ key.starthour }}</td></tr>
+                                            <tr><td>Ending</td><td>{{ key.endhour }}</td></tr>
+                                        </table>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>{{ error }}</p>
+                                {% endif %}
+                                
+                            </div>
+                            <img class="img-reponsive" src="{% static 'church/css/images/logo.jpg' %}">
+                            <p>{{ churh_slogan }}</p>
+                            <br>
+                            <a href="#">f comment</a>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="bottom-right-event">
+                            <h1>Get Rendez-vous with the Pastor</h1>
+                           
+                            <form method="post" id="people-appoiment">
+                                {% csrf_token %}
+                                <div class="log-item">
+                                    <label>Names</label>
+                                    <input type="text" name="names" 
+                                        placeholder="Name & lastname" id="save-title" required>
+                                </div>
+                                <div class="log-item">
+                                    <label>Email</label>
+                                    <input type="text" name="email" 
+                                        placeholder="email@test.com" id="save-title" required>
+                                </div>
+                                <div class="log-item">
+                                    <label>Date</label>
+                                    <input type="date" name="day" 
+                                        placeholder="Name & lastname" id="save-title" required>
+                                </div>
+                                <div class="log-item">
+                                    <label>Hour</label>
+                                    <input type="text" name="hour" 
+                                        placeholder="12h or 12h 30min" id="save-title" required>
+                                    <input type="hidden" name="people-appoiments">
+                                </div>
+
+                                <div class="log-item">
+                                    <button type="button" id="people-register">Ask for rendez-vous</button>
+                                </div>
+                               
+                                <div class="log-item">
+                                    <label id="msgpublick"></label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-content-event">
+                <div class="inner-bottom-content-event">
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</div>
+<div class="nk-footer">
+    <div class="inner-foot-content">
+        <ul class="nk-footer-list">
+            <li class="nk-footer-list-item">
+                <a class="nk-footer-link" href="#">About</a>
+            </li>
+            <li class="nk-footer-list-item">
+                <a class="nk-footer-link" href="#">Legal</a>
+            </li>
+            <li class="nk-footer-list-item">
+                Copyright © 2020 nankim. 
+            </li>
+            <li class="nk-footer-list-item">
+                All Rights Reserved. 
+            </li>
+            <li class="nk-footer-list-item">
+                Protected by reCAPTCHA –Privacy– Terms 
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

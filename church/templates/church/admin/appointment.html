@@ -1,0 +1,309 @@
+<form id="hidden_form_show" style="display: none;">
+    {% csrf_token %}
+    <input type="hidden" name="show_program">
+</form>
+
+<form id="getprogram_form_hidden" style="visibility: hidden;">
+    {% csrf_token %}
+    <input type="hidden" name="get_data_program">
+    <input type="hidden" name="edit_program" id="edit_program">
+</form>
+
+<form id="hidden_form_visit" style="display: none;">
+    {% csrf_token %}
+    <input type="hidden" name="show_visits">
+</form>
+
+<div class="f-popup-content" id="ap-popup-delete">
+    <form id="delete-program-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="apcloseModalDel();">×</span>
+            <div class="form-title">
+                <h1>Remove Post...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you wanr to remove this post?</label>
+                <input type="hidden" name="delete_program" id="delete_program">
+                <!-- <input type="hidden" name="table_delete_name" id="delete_in_table"> -->
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-program-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<div class="f-popup-content" id="visit-popup-delete">
+    <form id="delete-visit-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="visitCloseModalDel();">×</span>
+            <div class="form-title">
+                <h1>Remove Post...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you want to remove this post?</label>
+                <input type="hidden" name="delete_visits" id="delete_visit_posted">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-visit-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<!-- =============================================================== -->
+
+
+<div class="f-popup-content" id="visit-popup">
+    <form id="visit-program-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 400px;">
+            <span class="close" onclick="visitCloseModal();">×</span>
+            <div class="form-title" >
+                <h1>Save Church schedule...</h1>
+            </div>
+
+            <div class="log-item" >
+                <label>Day</label>
+                <input type="text" name="day" placeholder="Enter the name of the day..." 
+                    style="box-sizing:border-box;">
+            </div>
+
+            <div class="log-item">
+                <label>Cult starting hour</label>
+                <input type="text" name="starting" placeholder="Enter the starting cult hour"
+                        style="box-sizing:border-box;">
+            </div>
+
+            <div class="log-item">
+                <label>Cult ending hour</label>
+                <input type="text" name="ending" placeholder="Enter the ending cult hour"
+                    style="box-sizing:border-box;">
+            </div>
+
+            <div class="log-item">
+                <input type="hidden" name="visit" id="visit">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-save-visit-form" style="width: 100px;">Add visit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- ========================================================= -->
+
+
+
+<div class="f-popup-content" id="ap-popup-edit">
+    <form id="edit-program-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 400px;">
+            <span class="close" onclick="apcloseModalEdit();">×</span>
+            <div class="form-title" >
+                <h1>Edit content...</h1>
+            </div>
+
+            <div class="log-item" >
+                <label>Title</label>
+                <input type="text" name="program_title" placeholder="Edit Title" 
+                        style="box-sizing:border-box;" id="edit-title">
+            </div>
+
+            <div class="log-item">
+                <label>Date</label>
+                <input type="date" name="program_date" style="box-sizing:border-box;" id="program_date">
+            </div>
+
+            <div class="log-item">
+                <label>Body</label>
+                <textarea name="textarea_body" style="box-sizing:border-box;" id="textarea-content" rows="10"></textarea>
+            </div>
+
+            <div class="log-item">
+                <input type="hidden" name="update_program" id="update_program">
+                <input type="hidden" name="table_update_program" id="update_in_table_program">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-edit-program-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="f-popup-content" id="a-popup-content" style="display: none;">
+    <form id="a-post-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 450px;">
+            <span class="close" onclick="apcloseModal();">×</span>
+            <div class="form-title">
+                <h1>Post programmes...</h1>
+            </div>
+            <div class="log-item">
+                <label id="label">Choose one option</label>
+                <div id="radio">
+                    <div class="log-item">
+                        <label>Rendez-vous</label>
+                        <input type="radio" name="group" value="appointment" style="box-sizing:border-box; margin-top: 5px;">
+                    </div>
+
+                    <div class="log-item">
+                        <label>Church program</label>
+                        <input type="radio" name="group" value="program" style="box-sizing:border-box; margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-item">
+                <label>Title</label>
+                <input type="text" name="title" placeholder="save_title" 
+                        style="box-sizing:border-box;" id="save-title">
+            </div>
+
+            <div class="log-item">
+                <label>Date</label>
+                <input type="date" name="date" style="box-sizing:border-box;" id="date-content">
+            </div>
+
+            <div class="log-item">
+                <label>Body</label>
+                <textarea name="textarea-body" style="box-sizing:border-box;" id="textarea-content" rows="10"></textarea>
+                <input type="hidden" name="save_program" id="update_in_table">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-ap-save-form" style="width: 100px;">Post</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class= "session-main-content-right" id="session-main-content-right2" style="display: none;">
+    <div class="f-content-left">
+        <div class="title-bar-content">
+            <h1>Church program</h1>
+        </div>
+        
+        <div class="f-content-left-top">
+            <div class="rendez-vous-content">
+                <div class="left-render-vous-content">
+                    <form id="renvez-vous-show">
+                        {% csrf_token %}
+                        <h1>Rendez-vous asked</h1>
+                        {% if peopleap|length %}
+                            {% for appointment in peopleap %}
+                                <h2 id="appointment-asked">Poeple {{ appointment.people }}</h2>
+                            {% endfor %}
+                        {% else %}
+                            {{ error }}
+                        {% endif %}
+                        <a href="#" id="btn-renvez-vous-show">Open</a>
+                        <input type="hidden" name="hidden-appointment">
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="fom-content-box">
+                <form id="search-by-date-program">
+                    {% csrf_token %}
+                    <div class="form-item-group-search" id="form-item-group-search">
+                        <span>From</span>
+                        <input type="date" name='search_by_date1' />
+                        <span>to</span>
+                        <input type="date" name='search_by_date2' />
+                        <input type="hidden" name="search_date_hidden_app" id="options"/>
+                        <button type="button" id="btn-search-item-search">Search</button>
+                    </div>
+                </form>
+            </div> -->
+        </div>
+
+        <div class="f-content-left-bottom" >
+            <div class="tbl-content-box">
+                <div class="filter-in-tbl">
+                    <input type="search" data-table="order-table" placeholder="filter in table.." class="filter-in-table">
+                    <div class="right-content-filter" style=" width: 400px;">
+                        <button type="button" id="btn_show_hidden_form" style="width: 100px;">Show</button>
+                        <button type="button" id="btn_show_hidden_vists_form" style="width: 100px;">Visit</button>
+                        <button onclick="visitOpenModal();" style="width: 100px;">+Visit</button>
+                        <button onclick="apopenScreen();" style="width: 100px;">+Program</button>
+                    </div>
+                </div>
+                
+                <div class="table-content" id="table-data-ap">
+                    <!-- Data logining from Json -->
+                </div>
+                
+                <div class="table-content" id="table-data-rend">
+                    <!-- Data logining from Json -->
+                </div>
+
+                <div class="table-content" id="table-data-vistit">
+                    <!-- Data logining from Json -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="f-content-right">
+        <div class="f-content-activities">
+            <h1>Activities</h1>
+            <div class="activities-content">
+                <div class="display-acti-box" >
+                    <label style="box-sizing: border-box; width: 60%;">Rendez-vous saved</label>:
+                    <div id="givings" style="box-sizing: border-box; width: 40%; display: block;">
+                        {% if appointment|length %}
+                            {% for data in appointment %}
+                                <h2>{{ data.appointment }}</h2>
+                            {% endfor %}
+                        {% else %}
+                            <h2>RAS</h2>
+                        {% endif %}
+                    </div>
+                   
+                </div>
+                <div class="display-acti-box" >
+                    <label style="box-sizing: border-box; width: 60%;">Program saved</label>:
+                    <div id="tithes" style="box-sizing: border-box; width: 40%; display: block;">
+                        {% if program|length %}
+                            {% for data in program %}
+                                <h2>{{ data.program }}</h2>
+                            {% endfor %}
+                        {% else %}
+                            <h2>RAS</h2>
+                        {% endif %}
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+
+        <div class="f-content-activities" style="display: none;" id="more">
+            <h1>More</h1>
+            <span onclick="mcloseScreen();">×</span>
+            <div class="activities-content">
+                <div class="display-more" >
+                    <h4 id="more-title"></h4>
+                    <p id="more-body"></p>
+                </div>
+                <div class="display-more" >
+                    <button style="margin-top: 20px;">Post on web?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

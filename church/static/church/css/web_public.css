@@ -1,0 +1,355 @@
+.body-content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+}
+
+.header-content {
+    width:  100%;
+    display: inline-block;
+}
+
+.top-nav-bar {
+    width:  100%;
+    height: 30px;
+    background-color: rgb(26, 38, 53);
+    /* lightskyblue */
+    /* rgb(5, 5, 49) */
+}
+
+.media-logo {
+    display: inline-flex;
+    width: auto;
+}
+
+.media-logo img {
+    width: 100px;
+    height: 30px;
+}
+
+.bottom-nav-bar {
+    width: 100%;
+    display:  flex;
+    background: rgb(255, 255, 255);
+    color: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.48);
+    /* border-bottom: 1px solid #868686;
+    box-shadow: 1px 1px #868686; */
+}
+
+.bottom-nav-bar::after {
+    content:  "";
+    display: table;
+    clear: both;
+}
+
+.bottom-nav-bar a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    right: 0;
+    color: rgb(4, 18, 59);
+    /* border: 2px solid rgb(5, 128, 5); */
+    /* padding: 8px; */
+    /* border-radius: 4px; */
+    margin-right: 20px;
+    
+}
+
+.bottom-nav-bar a:hover {
+    color: orange;
+    border-bottom: 2px solid orange;
+    border-radius: 0px;
+}
+
+.bottom-nav-bar img {
+    width: 100px;
+    height: 60px;
+    left: 0;
+    margin-left: 50px;
+    padding-top: 5px;
+    
+}
+
+.nav-left-item {
+    width: 40%;
+    align-self: start;
+}
+
+.nav-right-item {
+    width:  60%;
+    align-self: center;
+    text-align: end;
+}
+
+.main-content-body {
+    width:  100%;
+    background-color: inherit;
+    display: block;
+}
+
+.top-main-content-body {
+    background-image:
+    linear-gradient(to top, rgba(7, 7, 7, 0.062), rgba(255, 255, 255, 0.938)),
+    url('images/christian.jpg');
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    color: white;
+    padding: 20px;  
+    display: flex;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    position: center;
+    border-bottom: 1px solid #888888;
+
+}
+
+.top-main-content-body::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left-top-main-content-body {
+    width: 60%;
+    padding: 8px;
+    text-align: center;
+    
+}
+
+.left-top-main-content-body h1 {
+    color: #fff;
+    text-shadow: 1px 1px 3px #04241f, 0 0 5px #021857;
+    display: block;
+}
+
+.left-top-main-content-body h3 {
+    color: rgb(2, 81, 90);
+    margin-top:  100px;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: start;
+    margin-left: 50px;
+}
+
+.right-top-main-content-body {
+    width: 40%;
+    box-sizing: border-box;
+}
+
+div.polaroid {
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #bfbfbf;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    margin-top: 0px;
+
+}
+
+div.rotate_right {
+    float: left;
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg); /* Safari */
+    transform: rotate(7deg);
+}
+
+div.rotate_left {
+    float: left;
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Safari */
+    transform: rotate(-8deg);
+  }
+
+/* slider */
+
+
+.image-sliderfade {
+    display: none;
+}
+
+img  
+{ 
+  vertical-align: middle; 
+} 
+
+.dot {
+    height: 15px; 
+    width: 15px; 
+    margin: 0 2px; 
+    background-color: transparent; 
+    border-color: #ddd; 
+    border-width: 5 px; 
+    border-style: solid; 
+    border-radius: 50%; 
+    display: inline-block; 
+    transition: border-color 0.6s ease; 
+}
+
+.active {
+    border-color: #666;
+}
+
+/* Animation */
+.fade  
+{ 
+  -webkit-animation-name: fade-image; 
+  -webkit-animation-duration: 1.5s; 
+  animation-name: fade-image; 
+  animation-duration: 1.5s; 
+} 
+  
+@-webkit-keyframes fade-image 
+{ 
+  from {opacity: .4}  
+  to {opacity: 1} 
+} 
+  
+@keyframes fade-image 
+{ 
+  from {opacity: .4}  
+  to {opacity: 1} 
+} 
+  
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px)  
+{ 
+  .text {font-size: 11px} 
+} 
+
+
+/* bottom-main-content-body */
+
+.bottom-main-content-body {
+    width: 100%;
+    display: block;
+    height: 100%;
+    margin-top: -10px;
+    /* background-color: rgb(5, 21, 36); */
+}
+
+.middle-nav-bar {
+    width:  100%;
+    text-align: center;
+    margin-top: 0px;
+    background-color: rgb(45, 52, 70);
+}
+
+.btn-middle-nav {
+    width: 30%;
+    display: flex;
+    box-sizing: border-box;
+    padding:  5px;
+    text-align: center;
+    margin: 10px auto;
+}
+.button {
+    padding: 8px 16px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    line-height: var(--font-size);
+    display: block;
+    outline: none;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: .5px;
+    color: #fff;
+    box-shadow: 0 2px 8px -1px rgba(#275efe, .32);
+    margin: 0px auto;
+    border-bottom: 2px solid rgb(45, 52, 70);
+    /* border-bottom: 2px solid orangered;
+    border-radius: 24px;
+    background: #275efe; */
+}
+
+.button:hover {
+    color: orange;
+    border-bottom: 2px solid orange;
+}
+
+/* sub-bottom-main-content-body */
+
+.sub-bottom-main-content-body {
+    display: flex;
+    width: 100%;
+
+}
+
+.inner-sub-bottom-main-content-body {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    padding: 2px;
+    margin: 10px auto;
+}
+
+
+.sub-bottom-main-content-body .box-news {
+    margin:  5px;
+    box-sizing: border-box;
+}
+
+.box-news {
+    width: 500px;
+    background-color: #fff;
+    text-align: center;
+    color:  #333;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.box-news h1 {
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 10px;
+    text-decoration: underline;
+}
+
+.box-news-text {
+    width: 70%;
+    padding: 5px;
+    color: #333;
+    margin: 20px auto;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.box-news a {
+    color: #fff;
+    font-family: 'Roboto';
+    text-decoration: none;
+    background-color: dodgerblue;
+    border-radius: 24px;
+    padding: 8px;
+    margin-top: 50px;
+}
+
+/* .box-news-text h2 {
+    color: green;
+    font-size: 18px;
+    font-weight: 500;
+    
+} */
+
+.box-news-text table {
+    box-sizing: border-box;
+}
+
+.box-news-text table tr {
+    width: initial;
+}
+
+.box-news-text table tr:hover {
+    background: none;
+}
+
+.box-news-text table #program-title {
+    font-weight: 600;
+    text-align: start;
+}
+

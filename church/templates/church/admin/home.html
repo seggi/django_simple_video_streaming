@@ -1,0 +1,61 @@
+{% extends "church/base.html" %}
+{% load static %}
+{% block title %}Activities{% endblock %}
+{% block content %}
+ <div class="all-content">
+    <div class="inner-all-content">
+        <div id="top-content">
+            <div class="left-top-content">
+                <div id="site-logo">
+                    <h1><a href="{% url 'login' %}">SAJEC</a></h1>
+                </div>
+            </div>
+            <div class="right-top-content">
+                {% csrf_token %}
+                <strong>{{ username }}</strong>
+                <!-- <a href="#">Visite web</a>
+                |
+                <a href="#">Contactes</a>
+                |
+                <a href="#">Changer mot de passe</a> -->
+                |
+                <a href="{% url 'logout' %}">Deconnection</a>
+
+            </div>
+        </div> 
+
+        <div id="bottom-content">
+          <div id="main-content">
+            <div class="main-content-left">
+                <div class="inner-main-content-left">
+                    <a href="#" id="open1" onclick="onfinanceScreen();">Finance</a>
+                    <a href="#" id="open2" onclick="onAppointmentScreen();">appointment</a>
+                    <a href="#" id="open3" onclick="onPreachingScreen();">Preachings</a>
+                    <a href="#" id="open4" onclick="ontillScreen();">Till</a>
+                    <a href="#" id="open5" onclick="onBlogScreen();">Blog</a>
+                </div>
+            </div>
+            <div class="main-content-right" >
+                {% include 'church/admin/finance.html' %}
+                {% include 'church/admin/appointment.html' %}
+                {% include 'church/admin/preaching.html' %}
+                {% include 'church/admin/till.html' %}
+                {% include 'church/admin/postblog.html' %}
+                <div class="welcom-system" id="welcom" >
+                    <img src="{% static 'church/css/images/logo.jpg' %}">
+                    <h1>Le Salut Par Jesus Christ</h1>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <div id="foot-content">
+        <h1>nanKim</h1>
+    </div>
+{% endblock footer %}
+
+ 

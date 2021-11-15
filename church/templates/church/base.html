@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block header %}
+            <title>{% block title %} {% endblock %}</title>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/base.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/login.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/main.css' %}"> 
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/extends_main.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/extends_main_one.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/web_public.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/extends_web_public.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'church/css/extends_web_public_1.css' %}">
+            <!-- <link rel="stylesheet" type="text/css" href="{% static 'church/css/bootstrap/css/addons/datatables.min.css"> -->
+            <!-- <link rel="stylesheet" type="text/css" href="{% static 'church/css/table_sortable/table-sortable-master/dist/table-sortable.css' %}"> -->
+
+        {% endblock %}
+    </head>
+    <body id="all-body">
+        {% block content %}
+
+        {% endblock %}
+    </body>
+
+    <footer>
+        {% block footer %}
+
+        {% endblock %}
+    </footer>
+    {% block script %}
+        <script type="text/javascript" src="{% static 'church/js/jquery/jquery-3.2.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/location.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/f_popup_screen.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/finance_content.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/default_tools.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/jquery/default_tools.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/appointment.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/managefiles.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/switchscreen.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/till.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/admin/postblog.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/public/public.js' %}"></script>
+        <script type="text/javascript" src="{% static 'church/js/public/slider.js' %}"></script>
+        <!-- <script type="text/javascript" src="{% static 'church/css/table_sortable/table-sortable-master/dist/table-sortable.js' %}"></script> -->
+        <!-- <script type="text/javascript" src="{% static 'church/css/table_sortable/table-sortable-master/dist/jquery.slim.min.js' %}"></script>  -->
+        <!-- <script type="text/javascript" src="{% static 'church/css/table_sortable/table-sortable-master/dist/test.js' %}"></script>  -->
+        <!-- <script type="text/javascript" src="{% static 'church/css/bootstrap/js/addons/datatables.min.js"></script> -->
+
+
+    {% endblock %}
+</html>

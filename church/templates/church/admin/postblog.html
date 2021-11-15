@@ -1,0 +1,233 @@
+<form id="form-show-posted-news-hidden">
+    {% csrf_token %}
+    <input type="hidden" name="display_posted_news">
+</form>
+
+<form id="form-show-posted-events-hidden">
+    {% csrf_token %}
+    <input type="hidden" name="display_posted_events">
+</form>
+
+<form id="select-current-post-info">
+     {% csrf_token %}
+    <input type="hidden" name="display_current_info">
+</form>
+
+<div class="f-popup-content" id="blog-popup-delete">
+    <form id="delete-blog-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="blogcloseModalDel();">×</span>
+            <div class="form-title">
+                <h1>Remove Post...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you want to remove this Post...?</label>
+                <input type="hidden" name="delete_blog" id="delete_blog">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-blog-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- remove church program info from the site -->
+
+<div class="f-popup-content" id="blog-popup-info">
+    <form id="remove-info-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="closeInfoModelPost();">×</span>
+            <div class="form-title">
+                <h1>Post article...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you want to post this article...?</label>
+                <input type="hidden" name="delete_info" id="delete_info">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-remove-info-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Remove current post on blog -->
+
+<div class="f-popup-content" id="blog-currentpost-delete">
+    <form id="delete-currentpost-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="currentcloseModalDel();">×</span>
+            <div class="form-title">
+                <h1>Remove Post...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you want to remove this Post...?</label>
+                <input type="hidden" name="remove_currentpost" id="remove_currentpost">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-currentpost-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- Delete Event -->
+
+<div class="f-popup-content" id="blogevent-popup-delete">
+    <form id="delete-blogevent-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="blogEventcloseModal();">×</span>
+            <div class="form-title">
+                <h1>Remove Post...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you want to remove this Post...?</label>
+                <input type="hidden" name="delete_blogevent" id="delete_blogevent">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-blogevent-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<div class="session-main-content-right" id="session-main-content-right5" style="display:none">
+    <div class="size-content-main-right">
+        <div class="top-size-content-main-right">
+            <button onclick="showNews();">News</button>
+            <button onclick="showEvent();">Events</button>
+            <button onclick="showInfo();">Info</button>
+        </div>
+
+        <div class="middle-size-content-main-right" id="show-news-posted">
+            <div class="nav-bar-post-title">
+                <h1>Post News |</h1>
+                <a href="#" onclick="openNewscloseModal();">Post</a>
+                <a href="#" id="btn-show-posted-news-hidden">Show posted news</a>
+            </div>
+            <div class="post-box" id="post-box-news">
+                <form id="form-news" class="form-content-box"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <span class="close1" onclick="postNewscloseModal();">×</span>
+                    <div class="form-item-content">
+                        <label>Title</label>
+                        <input type="text" name="title" placeholder="Enter post title" required>
+                    </div>
+
+                    <div class="form-item-content">
+                        <label>Subtitle</label>
+                        <input type="text" name="subtitle" placeholder="Enter post title" required>
+                    </div>
+
+                    <div class="form-item-content"> 
+                        <label>Content</label>
+                            <textarea name="text_body" id="styled" >Enter your comment here...</textarea> 
+                    </div>
+
+                    <div class="form-item-content">
+                        <label>Upload file</label>
+                        <input type="file" name="image_news" required>
+                        <input type="hidden" name="news_key">
+                    </div>
+                
+                    <div class="form-item-content">
+                        <div class="log-item">
+                            <button type="button" id="btn-news-post">Create Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="middle-size-content-main-right" id="show-event-posted">
+            <div class="nav-bar-post-title">
+                <h1>Post Envent |</h1>
+                <a href="#" onclick="openEventscloseModal();">Post</a>
+                <a href="#" id="btn-show-posted-events-hidden">Show posted events</a>
+            </div>
+            <div class="post-box" id="post-box-events">
+                <form id="form-events" class="form-content-box"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <span class="close1" onclick="postEventscloseModal();">×</span>
+                    <div class="form-item-content">
+                        <label>Title</label>
+                        <input type="text" name="title" placeholder="Enter post title" required>
+                    </div>
+
+                    <div class="form-item-content">
+                        <label>Subtitle</label>
+                        <input type="text" name="subtitle" placeholder="Enter post title" required>
+                    </div>
+
+                    <div class="form-item-content"> 
+                        <label>Content</label>
+                            <textarea name="text_body" id="styled" >Enter your comment here...</textarea> 
+                    </div>
+
+                    <div class="form-item-content">
+                        <label>Upload file</label>
+                        <input type="file" name="image_events" required>
+                        <input type="hidden" name="events_key">
+                    </div>
+                
+                    <div class="form-item-content">
+                        <div class="log-item">
+                            <button type="button" id="btn-events-post">Create Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="middle-size-content-main-right" id="show-info-posted">
+            <div class="nav-bar-post-title">
+                <h1>Post info |</h1>
+                <a href="#" onclick="openInfoscloseModal();">Post</a>
+                <a href="#" id="btn-current-post-hidden">Current post</a>
+            </div>
+            <div class="post-box" id="post-box-info">
+                <form id="form-infos" class="form-content-box"  style="display:none">
+                    {% csrf_token %}
+                    <div class="form-item-content">
+                        <input type="hidden" name="info_key" id="info_key">
+                    </div>
+                </form>
+
+                <div class="post-info-content" style="margin-bottom: 10px">
+                    <form id="select-category-info">
+                        {% csrf_token %}
+                        <div class="form-item-group">
+                            <select name="select_option" id="select_option">
+                                <option value='' selected disabled>select_option</option>
+                                {% for key, value in program_options.items %}
+                                    <option value="{{ key }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="option_hidden_info">
+                            <button type='button' id="btn-select-category-info">Display</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-size-content-main-right" id="postednews" style="display='none'"></div>
+        <div class="bottom-size-content-main-right" id="postedevents" style="display='none'"></div>
+        <div class="bottom-size-content-main-right" id="postedinfo" style="display='none'"></div>
+    </div> 
+</div>
+

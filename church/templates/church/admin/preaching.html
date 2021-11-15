@@ -1,0 +1,151 @@
+<form id="hidden_form_show_file" style="display: none;">
+    {% csrf_token %}
+    <input type="hidden" name="show_file">
+</form>
+
+
+<div class="f-popup-content" id="file-popup-delete">
+    <form id="delete-file-form">
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 150px;">
+            <span class="close" onclick="filecloseModalDel();">×</span>
+            <div class="form-title">
+                <h1>Remove Post...</h1>
+            </div>
+
+            <div class="log-item">
+                <label style="font-size: 20px;">Are sure you wanr to remove this file?</label>
+                <input type="hidden" name="delete_file" id="delete_file">
+            </div>
+
+            <div class="log-item">
+                <button type="button" id="btn-delete-file-form" style="width: 100px;">Yes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<div class="f-popup-content" id="file-popup-content">
+    <form id="file-post-form"  enctype="multipart/form-data"> <!--enctype="multipart/form-data"-->
+        {% csrf_token %}
+        <div class='f-form-popup' style="height: 250px;">
+            <span class="close" onclick="filecloseModal();">×</span>
+            <div class="form-title">
+                <h1>Save file...</h1>
+            </div>
+            
+            <div class="log-item">
+                <label>Title</label>
+                <input type="text" name="file_title" placeholder="save_title" 
+                        style="box-sizing:border-box;" id="save-title">
+            </div>
+
+            <div class="log-item">
+                <label>Upload file</label>
+                <input type="file" name="files" style="box-sizing:border-box;" id="fileUpload">
+                <input type="hidden" name="save_file" id="update_in_table">
+            </div>
+
+
+
+            <div class="log-item">
+                <button type="button" id="btn-file-save-form" style="width: 100px;">Upload</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+<div class="session-main-content-right" id="session-main-content-right3" style="display: none;">
+    <div class="f-content-left">
+        <div class="title-bar-content">
+            <h1>Post preaching...</h1>
+        </div>
+
+        <div class="v-content-test">
+            <div class="video-content">
+                <video style='border: 1px solid #333;' id="play-video" controls preload="none">
+                    <!--from javascript HTTP-->
+                </video>
+            </div>
+        </div>
+        
+
+        <div class="f-content-left-bottom">
+            <div class="tbl-content-box">
+                <div class="filter-in-tbl">
+
+                    <input type="search" data-table="order-table" placeholder="filter in table.." 
+                                class="filter-in-table" style="width: 20%;">
+
+                    <div class="right-content-filter" style="width: 70%; float: none;">
+                        <div class="fom-content-box" style="display: flex;box-sizing: border-box;">
+                            <form id="search-by-date-file" style="width: 60%;" >
+                                {% csrf_token %}
+                                <div class="form-item-group-search" id="form-item-group-search" style=" box-sizing: border-box;">
+                                    <span>From</span>
+                                    <input type="date" name='search_by_date1' />
+                                    <span>to</span>
+                                    <input type="date" name='search_by_date2' />
+                                    <input type="hidden" name="search_date_hidden_file" id="options"/>
+                                   <button style="margin-left: 0px; width:80px"type="button" id="btn-search-item-file">Search</button>
+                                </div>
+                               
+                            </form>
+                            <div style="display: inline-flex; width: auto; background: white;">
+                                
+                                <button style="margin-left: 10px; width: 50px;"type="button" id="btn_show_hidden_form_file">Show</button>
+                                <button  style="margin-left: 0px; width: 50px;" onclick="fileOpenScreen();"><b>+</b></button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+                <div class="table-content" id="table-data-pr">
+                    <!-- Data logining from Json -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="f-content-right">
+        <div class="f-content-activities">
+            <h1>Activities</h1>
+            <div class="activities-content">
+                <div class="display-acti-box" >
+                    <label style="box-sizing: border-box; width: 60%;">Files saved</label>:
+                    <div id="givings" style="box-sizing: border-box; width: 40%; display: block;">
+                        {% if files|length %}
+                            {% for data in files %}
+                                <h2>{{ data.files }}</h2>
+                            {% endfor %}
+                        {% else %}
+                            <h2>RAS</h2>
+                        {% endif %}
+                    </div>
+                   
+                </div>
+                <!-- <div class="display-acti-box" >
+                    <label style="box-sizing: border-box; width: 60%;">Program saved</label>:
+                    <div id="tithes" style="box-sizing: border-box; width: 40%; display: block;">
+                        {% if program|length %}
+                            {% for data in program %}
+                                <h2>{{ data.program }}</h2>
+                            {% endfor %}
+                        {% else %}
+                            <h2>RAS</h2>
+                        {% endif %}
+                    </div>
+          
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

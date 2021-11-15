@@ -1,0 +1,375 @@
+/* Display preaching */
+
+.video-content-main {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(17, 17, 17);
+    position: fixed;
+    overflow: auto;
+    margin-bottom: 100px;
+    border-top:1px solid #313131;
+    
+}
+
+.inner-video-content-main {
+    width: 100%;
+    background-color: inherit;
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.inner-video-content-main::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left-video-main {
+    float: left;
+    width:  70%;
+    position: relative;
+    text-align: center;
+    display: block;
+    /* border: 1px solid #313131; */
+}
+
+
+.right-video-main {
+    float: right;
+    width: 30%;
+    background-color: inherit;
+    display: block;
+    background: #1b1b1b;
+    border-left: 1px solid #313131;
+    margin-bottom: 200px;
+}
+
+.left-video-main .video-block {
+    margin-top:  10px;
+    margin-left:  100px;
+    
+}
+
+.video-block  {
+    width: 80%;
+    margin-left:  30px;
+    background-color: #333;
+    /* border: 1px solid #070707; */
+    border: 1px solid #313131;
+    
+}
+
+.video-block .video-box {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #363636;
+}
+
+.video-block .video-title {
+    padding: 8px;
+    background-color: #1b1b1b;
+    text-align: left;
+}
+
+.video-title h1{
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: 'Roboto';
+    margin-left: 30px;
+
+}
+
+.right-video-main a {
+    text-decoration: none;
+}
+
+.right-video-main .live_search  {
+    width: 85%;
+    box-sizing: border-box;
+    margin-left:30px;
+    margin-top: 10px;
+    padding: 2px;
+    background: white;
+}
+
+.right-video-main .video-block {
+    width: 60%;
+    border: none;
+    margin: 5px auto;
+    margin-top: 10px;
+    
+}
+
+.right-video-main .video-title {
+    background-color:inherit;
+    text-align: left;
+}
+
+.right-video-main .video-title h1{
+    color:  white;
+    font-size: 15px;
+}
+
+.btn-watch-public:hover {
+    cursor: pointer;
+}
+
+.live_search  {
+    width:  100%;
+    display: inline-flex;
+}
+
+.live_search input[type="submit"] {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid white;
+    background: dodgerblue;
+    color: white;
+    font-size: 15pxz;
+}
+
+.live_search input[type="date"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid white;
+    font-size: 15px;
+}
+
+.live_search input[type="submit"]:hover {
+    border: 1px solid white;
+    background: dodgerblue;
+}
+
+
+/* Events */
+
+.event-content-body {
+    width: 100%;
+    background-color: #fff;
+    background: transparent;
+    background-image: url('images/view.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: center;
+}
+
+.top-event-nav-bar {
+    width: 100%;
+    height: 50px;
+    vertical-align: baseline;
+    text-align: center;
+    
+}
+
+
+.event-middle-content-body {
+    width:  100%;
+    margin-top:  0px;
+
+}
+
+.header-middle-content-body{
+    width: 100%;
+    display: block;
+    text-align: start;
+}
+
+.title-header {
+    margin: 10px auto;
+    width:  70%;
+}
+
+.title-header h1{
+    font-weight: 300;
+    font-size:  48px;
+    color:  #333;
+    padding-top: 20px;
+    margin-left: 80px;
+    font-family: "Chronicle Display A","Chronicle Display B",serif;
+}
+
+.title-header  p {
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+    margin-left: 80px;
+}
+
+.sub-event-content-body {
+    width:  100%;
+    display: block;
+    text-align: start;
+}
+
+.bind-all {
+    display: flex;
+    width: 70%;
+    margin: 10px auto;
+}
+
+.bind-all::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left-event {
+    width:100%;
+    display: block;
+}
+
+/* .right-event{
+    width: 40%;
+    text-align: left;
+    display: block;
+    background: green;
+} */
+
+
+.right-event {
+    width: 500px;
+    background-color: #fff;
+    text-align: start;
+    color:  #333;
+    border-radius: 4px;
+    padding: 8px;
+    display: block;
+}
+
+.right-event h1 {
+    font-weight: 600;
+    font-size:  24px;
+    color: dodgerblue;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    white-space: .1px;
+    font-family: 'Oswald',serif;
+}
+
+.right-event-text {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.box-news-text table {
+    box-sizing: border-box;
+}
+
+.box-news-text table tr {
+    width: initial;
+}
+
+.box-news-text table tr:hover {
+    background: none;
+}
+
+.box-news-text table #program-title {
+    font-weight: 600;
+    text-align: start;
+}
+
+.box-news-text p {
+    display: block;
+    text-align: start;
+    vertical-align: baseline;
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    margin: 10px 10px 8px 0px;
+
+}
+
+.box-news-text .a {
+    list-style-type: square;
+    font-size: 18px;
+}
+
+.right-event  a {
+    color: #fff;
+    font-family: 'Roboto';
+    text-decoration: none;
+    background-color: dodgerblue;
+    border-radius: 24px;
+    padding: 8px;
+    margin-top: 50px;
+    font-size: 18px;
+    margin-left: 100px;
+}
+
+.right-event p {
+    text-align: center;
+}
+
+
+.body-posted {
+    margin: 10px auto;
+    width:  70%;
+}
+
+.body-posted h1 {
+    font-weight: 600;
+    font-size:  24px;
+    color: #1a1a1a;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    white-space: .1px;
+    font-family: 'Oswald',serif;
+}
+
+.body-posted img {
+    vertical-align: middle;
+}
+
+.img-reponsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.body-posted p {
+    padding: 12px 0 !important;
+    margin: 0 !important;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.bottom-content-event {
+    width: 100%;
+    display: block;
+    border-top: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 20px 0 15px 0;
+    text-align: center;
+}
+
+.inner-bottom-content-event {
+    margin: 10px auto;
+    width: 60%;
+    display: block;
+    text-align: center;
+}
+
+.inner-bottom-content-event form {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.inner-bottom-content-event h1 {
+    font-weight: 300;
+    font-size:  40px;
+    color: #1a4de6 !important;
+    padding-top: 0px;
+    font-family: "Chronicle Display A","Chronicle Display B",serif;
+}
+
+.right-event img {
+    vertical-align: middle;
+}
